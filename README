@@ -1,0 +1,15 @@
+= Description =
+
+This node grabs the keyboard of the current console where the node is launched from. It uses ncurses library.
+For each key press, a message is published under the "keyboard" topic.
+
+= Messages =
+
+keyboard/Key: an uint16 value corresponding to the ncurses keycode.
+
+= Usage =
+
+After suscribing, the keycode can be processed by checking for std::isprint(c) (cctype header) for a printable character.
+If so, the key value corresponds to the ascii code of the character. Otherwise, the character will be one of the KEY_* constants of
+ncurses library header. These special values are numbers between KEY_MIN and KEY_MAX.
+
