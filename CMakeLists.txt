@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.8.3)
 project(keyboard)
 
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs message_generation)
-
-set(LIBS ncurses)
+find_package(SDL REQUIRED)
+set(LIBS ${SDL_LIBRARY})
 
 #######################################
 ## Declare ROS messages and services ##
@@ -33,6 +33,8 @@ catkin_package(
 ###########
 ## Build ##
 ###########
+
+include_directories(${SDL_INCLUDE_DIR})
 
 add_executable(keyboard src/main.cpp src/keyboard.cpp)
 

@@ -8,16 +8,18 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "keyboard");
   ros::NodeHandle n("~");
 
-  ros::Publisher pub = n.advertise<keyboard::Key>("keypress", 10);
+  ros::Publisher pub_down = n.advertise<keyboard::Key>("keydown", 10);
+  ros::Publisher pub_up = n.advertise<keyboard::Key>("keyup", 10);
 
   keyboard::Keyboard kbd;
   ros::Rate r(50);
-  while (ros::ok()) {
-    int c = kbd.get_key();
-    if (c != -1) {
-      keyboard::Key k;
-      k.code = c;
-      pub.publish(k);
+  
+  keyboard::Key k;
+  bool pressed, new_event;
+  while (ros::ok() && kbd.get_key(new_event, pressed, k.code, k.modifiers)) {
+    if (new_event) {
+      if (pressed) pub_down.publish(k);
+      else pub_up.publish(k);
     }
     ros::spinOnce();
     r.sleep();

@@ -10,8 +10,8 @@
   <author email="mnitsche@dc.uba.ar">v01d</author>
 
   <!-- custom dependencies -->
-  <build_depend>ncurses</build_depend>
-  <run_depend>ncurses</run_depend>
+  <build_depend>SDL</build_depend>
+  <run_depend>SDL</run_depend>
 
   <!-- standard dependencies -->
   <build_depend>std_msgs</build_depend>
