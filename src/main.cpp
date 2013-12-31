@@ -4,20 +4,19 @@
 using namespace std;
 
 int main(int argc, char** argv)
-{
-  keyboard::Keyboard kbd;
-  
+{  
   ros::init(argc, argv, "keyboard");
   ros::NodeHandle n("~");
 
-  ros::Publisher pub = n.advertise<keyboard::Key>("keypress", 5);
+  ros::Publisher pub = n.advertise<keyboard::Key>("keypress", 10);
 
+  keyboard::Keyboard kbd;
   ros::Rate r(50);
   while (ros::ok()) {
     int c = kbd.get_key();
     if (c != -1) {
       keyboard::Key k;
-      k.key = c;
+      k.code = c;
       pub.publish(k);
     }
     ros::spinOnce();
