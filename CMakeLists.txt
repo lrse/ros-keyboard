@@ -43,6 +43,8 @@ target_link_libraries(keyboard
   ${catkin_LIBRARIES}
 )
 
+add_dependencies(keyboard keyboard_generate_messages_cpp)
+
 #############
 ## Install ##
 #############
