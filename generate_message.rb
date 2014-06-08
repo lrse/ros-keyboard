@@ -10,6 +10,7 @@ File.open(ARGV.first,'r') {|f|
 
 puts keycodes.map{|k,v| k = k.gsub('SDLK', 'KEY'); "uint16 #{k}=#{v}"}.join("\n")
 puts modifiers.map{|k,v| k = k.gsub('KMOD', 'MODIFIER'); "uint16 #{k}=#{v}"}.join("\n")
-puts 
+puts
+puts "Header header"
 puts "uint16 code"
 puts "uint16 modifiers"

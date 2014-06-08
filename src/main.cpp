@@ -18,6 +18,7 @@ int main(int argc, char** argv)
   bool pressed, new_event;
   while (ros::ok() && kbd.get_key(new_event, pressed, k.code, k.modifiers)) {
     if (new_event) {
+      k.header.stamp = ros::Time::now();
       if (pressed) pub_down.publish(k);
       else pub_up.publish(k);
     }

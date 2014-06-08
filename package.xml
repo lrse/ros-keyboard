@@ -10,8 +10,9 @@
   <author email="mnitsche@dc.uba.ar">v01d</author>
 
   <!-- custom dependencies -->
-  <build_depend>SDL</build_depend>
-  <run_depend>SDL</run_depend>
+  <build_depend>sdl</build_depend>
+  <build_depend>ruby</build_depend>
+  <run_depend>sdl</run_depend>
 
   <!-- standard dependencies -->
   <build_depend>std_msgs</build_depend>

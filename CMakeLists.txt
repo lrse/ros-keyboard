@@ -27,14 +27,14 @@ catkin_package(
   #INCLUDE_DIRS include
 #  LIBRARIES keyboard
   CATKIN_DEPENDS roscpp std_msgs message_runtime
-  DEPENDS system_lib ${LIBS}
+  DEPENDS ${LIBS}
 )
 
 ###########
 ## Build ##
 ###########
 
-include_directories(${SDL_INCLUDE_DIR})
+include_directories(${catkin_INCLUDE_DIRS} ${SDL_INCLUDE_DIR})
 
 add_executable(keyboard src/main.cpp src/keyboard.cpp)
 
@@ -43,7 +43,7 @@ target_link_libraries(keyboard
   ${catkin_LIBRARIES}
 )
 
-add_dependencies(keyboard keyboard_generate_messages_cpp)
+add_dependencies(keyboard keyboard_gencpp)
 
 #############
 ## Install ##

@@ -245,5 +245,6 @@ uint16 MODIFIER_CAPS=8192
 uint16 MODIFIER_MODE=16384
 uint16 MODIFIER_RESERVED=32768
 
+Header header
 uint16 code
 uint16 modifiers
