@@ -4,10 +4,10 @@
   <version>0.1.0</version>
   <description>publishes keyboard key presses</description>
   <license>GPLv2</license>
-  <url type="website">http://robotica.dc.uba.ar</url>
+  <url type="website">http://wiki.ros.org/keyboard</url>
 
-  <maintainer email="mnitsche@dc.uba.ar">v01d</maintainer>
-  <author email="mnitsche@dc.uba.ar">v01d</author>
+  <maintainer email="dontwantspam@spam.com">v01d</maintainer>
+  <author email="dontwantspam@spam.com">v01d</author>
 
   <!-- custom dependencies -->
   <build_depend>sdl</build_depend>
