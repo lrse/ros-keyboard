@@ -2,8 +2,8 @@
 Changelog for package keyboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2014-06-08)
+------------------
 * README
 * stuff
 * fix for hydro

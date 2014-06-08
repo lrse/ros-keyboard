@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>keyboard</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>publishes keyboard key presses</description>
   <license>GPLv2</license>
   <url type="website">http://wiki.ros.org/keyboard</url>
