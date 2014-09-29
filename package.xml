@@ -6,8 +6,8 @@
   <license>GPLv2</license>
   <url type="website">http://wiki.ros.org/keyboard</url>
 
-  <maintainer email="dontwantspam@spam.com">v01d</maintainer>
-  <author email="dontwantspam@spam.com">v01d</author>
+  <maintainer email="phreakuencies@gmail.com">v01d</maintainer>
+  <author email="phreakuencies@gmail.com">v01d</author>
 
   <!-- custom dependencies -->
   <build_depend>sdl</build_depend>
