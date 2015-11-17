@@ -51,18 +51,20 @@ keyboard::Keyboard::~Keyboard(void)
 
 void keyboard::Keyboard::render(void)
 {
-  int texW = 0;
-  int texH = 0;
-  SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-  SDL_Rect dstrect = { 0, 0, texW, texH };
-  SDL_RenderCopy(renderer, texture, NULL, &dstrect);
+  if (use_ttf)
+  {
+    int texW = 0;
+    int texH = 0;
+    SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+    SDL_Rect dstrect = { 0, 0, texW, texH };
+    SDL_RenderCopy(renderer, texture, NULL, &dstrect);
+  }
   SDL_RenderPresent(renderer);
 }
 
 bool keyboard::Keyboard::get_key(bool& new_event, bool& pressed, uint16_t& code, uint16_t& modifiers)
 {
-  if (use_ttf)
-    render();
+  render();
 
   new_event = false;
 
