@@ -47,8 +47,7 @@ int main(int argc, char** argv)
   catch (std::runtime_error& err)
   {
     ROS_ERROR("ROS keyboard initialization failed: %s", err.what());
-    ros::shutdown();
   }
 
-  ros::waitForShutdown();
+  ros::shutdown();
 }
