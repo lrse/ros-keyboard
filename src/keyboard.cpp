@@ -69,25 +69,26 @@ bool keyboard::Keyboard::get_key(bool& new_event, bool& pressed, uint16_t& code,
   new_event = false;
 
   SDL_Event event;
-  SDL_WaitEvent(&event);
-
-  switch(event.type)
+  if (SDL_PollEvent(&event))
   {
-    case SDL_KEYUP:
-      pressed = false;
-      code = event.key.keysym.sym;
-      modifiers = event.key.keysym.mod;
-      new_event = true;
-    break;
-    case SDL_KEYDOWN:
-      pressed = true;
-      code = event.key.keysym.sym;
-      modifiers = event.key.keysym.mod;
-      new_event = true;
-    break;
-    case SDL_QUIT:
-      return false;
-    break;
+    switch(event.type)
+    {
+      case SDL_KEYUP:
+        pressed = false;
+        code = event.key.keysym.sym;
+        modifiers = event.key.keysym.mod;
+        new_event = true;
+      break;
+      case SDL_KEYDOWN:
+        pressed = true;
+        code = event.key.keysym.sym;
+        modifiers = event.key.keysym.mod;
+        new_event = true;
+      break;
+      case SDL_QUIT:
+        return false;
+      break;
+    }
   }
 
   return true;
