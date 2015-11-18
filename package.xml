@@ -11,8 +11,10 @@
 
   <!-- custom dependencies -->
   <build_depend>sdl</build_depend>
+  <build_depend>sdl2-ttf</build_depend>
   <build_depend>ruby</build_depend>
-  <run_depend>sdl</run_depend>
+  <run_depend>sdl2</run_depend>
+  <run_depend>sdl2-ttf</run_depend>
 
   <!-- standard dependencies -->
   <build_depend>std_msgs</build_depend>
