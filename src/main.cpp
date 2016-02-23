@@ -11,7 +11,12 @@ int main(int argc, char** argv)
   ros::Publisher pub_down = n.advertise<keyboard::Key>("keydown", 10);
   ros::Publisher pub_up = n.advertise<keyboard::Key>("keyup", 10);
 
-  keyboard::Keyboard kbd;
+  int repeat_delay, repeat_interval;
+  
+  n.param<int>( "repeat_delay", repeat_delay, SDL_DEFAULT_REPEAT_DELAY );
+  n.param<int>( "repeat_interval", repeat_interval, SDL_DEFAULT_REPEAT_INTERVAL );
+  
+  keyboard::Keyboard kbd( repeat_delay, repeat_interval );
   ros::Rate r(50);
   
   keyboard::Key k;

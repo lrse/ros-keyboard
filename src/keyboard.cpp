@@ -1,9 +1,9 @@
 #include "keyboard.h"
 
-keyboard::Keyboard::Keyboard(void)
+keyboard::Keyboard::Keyboard( int repeat_delay, int repeat_interval )
 {
   if (SDL_Init(SDL_INIT_VIDEO) < 0) throw std::runtime_error("Could not init SDL");
-  SDL_EnableKeyRepeat(0, 0);
+  SDL_EnableKeyRepeat( repeat_delay, repeat_interval );
   SDL_WM_SetCaption("ROS keyboard input", NULL);
   window = SDL_SetVideoMode(100, 100, 0, 0);
 }
