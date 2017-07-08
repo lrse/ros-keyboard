@@ -6,6 +6,8 @@ keyboard::Keyboard::Keyboard( int repeat_delay, int repeat_interval )
   SDL_EnableKeyRepeat( repeat_delay, repeat_interval );
   SDL_WM_SetCaption("ROS keyboard input", NULL);
   window = SDL_SetVideoMode(100, 100, 0, 0);
+  
+
 }
 
 keyboard::Keyboard::~Keyboard(void)
@@ -26,12 +28,17 @@ bool keyboard::Keyboard::get_key(bool& new_event, bool& pressed, uint16_t& code,
         code = event.key.keysym.sym;
         modifiers = event.key.keysym.mod;
         new_event = true;
+        SDL_FillRect(window, NULL,SDL_MapRGB(window->format, code, 0, 0));  
+        SDL_Flip(window);   
       break;
       case SDL_KEYDOWN:
         pressed = true;
         code = event.key.keysym.sym;
         modifiers = event.key.keysym.mod;
         new_event = true;
+        SDL_FillRect(window, NULL, SDL_MapRGB(window->format,code,0,255)); 
+        SDL_Flip(window);
+
       break;
       case SDL_QUIT:
         return false;
