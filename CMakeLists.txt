@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0)
 project(keyboard)
 
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs message_generation)
@@ -24,10 +24,10 @@ generate_messages(
 ###################################
 
 catkin_package(
-  #INCLUDE_DIRS include
-#  LIBRARIES keyboard
+  # INCLUDE_DIRS include
+  # LIBRARIES keyboard
   CATKIN_DEPENDS roscpp std_msgs message_runtime
-  DEPENDS ${LIBS}
+  DEPENDS SDL
 )
 
 ###########
