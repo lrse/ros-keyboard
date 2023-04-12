@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>keyboard_msgs</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="christopher.mower@kcl.ac.uk">cm22</maintainer>
-  <license>TODO: License declaration</license>
+  <version>1.0.0</version>
+  <description>Keyboard message definitions.</description>
+  <maintainer email="christopher.mower@kcl.ac.uk">cmower</maintainer>
+  <license>GPLv2</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
