@@ -1,0 +1,6 @@
+axes:
+  - ["KEY_LEFT", "KEY_RIGHT"]
+  - ["KEY_UP", "KEY_DOWN"]
+
+buttons:
+  - "KEY_SPACE"
