@@ -19,9 +19,10 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(SDL REQUIRED)
 find_package(keyboard_msgs REQUIRED)
 
-set(LIBS ${SDL_LIBRARY})
+set(LIBS ${SDL_LIBRARY} SDL::SDL)
 include_directories(${SDL_INCLUDE_DIR})
 
 add_executable(keyboard src/keyboard.cpp)
